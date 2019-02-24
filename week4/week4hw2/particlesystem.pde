@@ -5,11 +5,13 @@ class Particlesystem{
   
   Particlesystem(PVector origin){
     particles = new ArrayList<Particle>();
-    origin= new PVector(b.pos.x,b.pos.y);
+    this.origin= origin;
   }
   
   void addParticle(){
-    particles.add(new Particle());
+    for(int i=0; i<5; i++){
+    particles.add(new Particle(origin));
+    }
   }
   
   void run(){

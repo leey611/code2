@@ -1,5 +1,5 @@
 //ArrayList<Particle> particles;
-Particlesystem ps;
+ArrayList<Particlesystem> ps;
 
 int w = 50;
 int h = 25;
@@ -33,7 +33,7 @@ void setup(){
   p= new Paddle();
   myBricks = new Bricks[cols][rows];
   
-  ps = new Particlesystem(b.pos);
+  ps = new ArrayList<Particlesystem>();
   
   for(int i=0; i<cols; i++){
     for(int j=0; j<rows; j++){
@@ -94,8 +94,11 @@ void draw(){
         score=score+1;
         println(score);
         myBricks[i][j].o=0;
-        ps.addParticle();
-        ps.run();
+        ps.add(new Particlesystem(new PVector (myBricks[i][j].x, myBricks[i][j].y)));
+        
+        //ps.addParticle();
+       // ps.run();
+       
        //particle.update();
        //particle.display();
        //Particle particle = particle.get(0);
@@ -116,6 +119,12 @@ void draw(){
         
       }
       
+    }
+    
+    for(int i=0; i<ps.size(); i++){
+      Particlesystem p = ps.get(i);
+      p.addParticle();
+      p.run();
     }
   
   

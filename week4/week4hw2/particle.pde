@@ -3,13 +3,13 @@ class Particle{
   PVector velocity;
   PVector acceleration;
   float lifespan=255;
-  //PVector origin;
+
   
-  Particle(){
+  Particle(PVector location){
     acceleration = new PVector(0,0.05);
     velocity = new PVector(random(-1,1), random(-1,1));
-    location = new PVector(b.pos.x,b.pos.y);
-  }
+    this.location = location;   
+}
 
 
 void update(){
