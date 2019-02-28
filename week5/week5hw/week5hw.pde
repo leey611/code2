@@ -29,7 +29,7 @@ void mousePressed(){
 }
 
 void scene0(){
-  background(255);
+  background(81,123,155);
   
      for(int i=0; i<mySnow.size(); i++){
     Snowflakes s = mySnow.get(i);
@@ -49,7 +49,7 @@ void scene0(){
 }
 
 void scene1(){
-  background(255);
+  background(0);
   
    for(int i=0; i<mySquare.size(); i++){
     Square s = mySquare.get(i);
