@@ -20,7 +20,7 @@ void draw(){
       float py = float(pieces[1]);
       float ps = float(pieces[2]);
       //stroke(0);
-      line(ps,0,ps, ps);
+      line((width/lines.length)*index,height,(width/lines.length)*index, ps);
       //ellipse(px,py,ps,ps);
     }
     index++;
