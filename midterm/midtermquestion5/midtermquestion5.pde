@@ -6,7 +6,7 @@ String [] backgrounds;
 
 void setup(){
   size(600, 600); 
-  backgrounds=loadStrings("colordata.txt");
+  backgrounds=loadStrings("colordata.csv");
 
 }
 
@@ -28,9 +28,9 @@ void keyPressed(){
     String[] lines = new String[colornumber.length];
     for(int i =0; i<colornumber.length;i++){
       lines[i]=colornumber[i]+"\t";
-      backgrounds=append(backgrounds, lines[i]);
+      backgrounds=append(str(colornumber), lines[i]);
     }
-    saveStrings("colordata.txt", backgrounds);
+    saveStrings("colordata.csv", backgrounds);
     exit();
   }
 }
